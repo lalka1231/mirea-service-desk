@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МИРЭА Диспетчер - Вход</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>МИРЭА Диспетчер</h1>
+            <p class="subtitle">Система обработки заявок</p>
+            
+            <div class="tab-container">
+                <button class="tab active" onclick="showTab('login')">Вход</button>
+                <button class="tab" onclick="showTab('register')">Регистрация</button>
+            </div>
+
+            <div id="login-form" class="form active">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="login-email" placeholder="student@test.com">
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" id="login-password" placeholder="123456">
+                </div>
+                <button onclick="login()" class="btn-primary">Войти</button>
+                <p class="test-data">Тестовые данные: student@test.com / 123456</p>
+            </div>
+
+            <div id="register-form" class="form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="register-email" placeholder="email@test.com">
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" id="register-password" placeholder="Минимум 6 символов">
+                </div>
+                <div class="form-group">
+                    <label>Роль</label>
+                    <select id="register-role">
+                        <option value="student">Студент</option>
+                        <option value="executor">Исполнитель</option>
+                    </select>
+                </div>
+                <button onclick="register()" class="btn-primary">Зарегистрироваться</button>
+            </div>
+
+            <div id="error-message" class="error"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

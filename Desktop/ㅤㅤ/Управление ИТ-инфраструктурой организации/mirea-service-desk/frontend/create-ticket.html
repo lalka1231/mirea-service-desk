@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МИРЭА Диспетчер - Новая заявка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>Создать заявку</h1>
+                <button onclick="location.href='dashboard.html'" class="btn-secondary">Назад</button>
+            </div>
+
+            <div class="form">
+                <div class="form-group">
+                    <label>Тема*</label>
+                    <input type="text" id="ticket-title" placeholder="Например: Сломан стул">
+                </div>
+
+                <div class="form-group">
+                    <label>Категория*</label>
+                    <select id="ticket-category">
+                        <option value="Физическая поломка">Физическая поломка (мебель, оборудование)</option>
+                        <option value="Цифровая проблема">Цифровая проблема (ПО, интернет)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Местоположение*</label>
+                    <input type="text" id="ticket-location" placeholder="Например: Аудитория 310">
+                </div>
+
+                <div class="form-group">
+                    <label>Описание*</label>
+                    <textarea id="ticket-description" rows="4" placeholder="Подробно опишите проблему"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button onclick="createTicket()" class="btn-primary">Отправить заявку</button>
+                </div>
+
+                <div id="error-message" class="error"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
