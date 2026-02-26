@@ -1,0 +1,49 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace files
+go.sum
+go.mod
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Проектные папки (игнорируем всё, что не в backend/ и frontend/)
+/*
+!/backend/
+!/frontend/
+!/README.md
+!/.gitignore
+
+# Игнорируем всё вне текущего репозитория
+/*/*/
+../
+../../
