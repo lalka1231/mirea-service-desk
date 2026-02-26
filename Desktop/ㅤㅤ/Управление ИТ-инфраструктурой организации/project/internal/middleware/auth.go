@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 	"strings"
-	"mirea-service-desk/pkg/utils"
+	"github.com/lalka1231/mirea-service-desk/pkg/utils"
 	"github.com/gin-gonic/gin"
 )
 

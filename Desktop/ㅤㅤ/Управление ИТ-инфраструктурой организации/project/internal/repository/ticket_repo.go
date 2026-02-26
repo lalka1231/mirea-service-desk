@@ -2,7 +2,7 @@ package repository
 
 import (
 	"database/sql"
-	"mirea-service-desk/internal/models"
+	"github.com/lalka1231/mirea-service-desk/internal/models"
 )
 
 type TicketRepository struct {

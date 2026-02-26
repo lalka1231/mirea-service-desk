@@ -2,9 +2,9 @@ package handlers
 
 import (
 	"net/http"
-	"mirea-service-desk/internal/models"
-	"mirea-service-desk/internal/repository"
-	"mirea-service-desk/pkg/utils"
+	"github.com/lalka1231/mirea-service-desk/internal/models"
+	"github.com/lalka1231/mirea-service-desk/internal/repository"
+	"github.com/lalka1231/mirea-service-desk/pkg/utils"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 )

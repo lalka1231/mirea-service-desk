@@ -5,9 +5,9 @@ import (
 	"os"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"mirea-service-desk/internal/handlers"
-	"mirea-service-desk/internal/middleware"
-	"mirea-service-desk/internal/repository"
+	"github.com/lalka1231/mirea-service-desk/internal/handlers"
+	"github.com/lalka1231/mirea-service-desk/internal/middleware"
+	"github.com/lalka1231/mirea-service-desk/internal/repository"
 )
 
 func main() {
