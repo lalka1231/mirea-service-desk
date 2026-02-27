@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать заявку (упрощенно)</title>
+</head>
+<body>
+    <h1>Создать заявку</h1>
+    <button onclick="location.href='dashboard.html'">Назад</button>
+    
+    <form>
+        <p>Тема: <input type="text" id="ticket-title"></p>
+        <p>Категория: 
+            <select id="ticket-category">
+                <option>Физическая поломка</option>
+                <option>Цифровая проблема</option>
+            </select>
+        </p>
+        <p>Местоположение: <input type="text" id="ticket-location"></p>
+        <p>Описание: <textarea id="ticket-description"></textarea></p>
+        <p><button onclick="createTicket()">Отправить заявку</button></p>
+    </form>
+    
+    <div id="error-message"></div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
