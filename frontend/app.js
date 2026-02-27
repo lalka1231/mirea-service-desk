@@ -194,8 +194,13 @@ async function updateStatus(ticketId, status) {
 }
 
 async function createTicket() {
+    console.log('📝 createTicket() вызвана');
+    
     const token = getToken();
+    console.log('🔑 Token:', token ? token.substring(0, 20) + '...' : 'нет токена');
+    
     if (!token) {
+        console.log('⛔ Нет токена, редирект на login');
         window.location.href = 'index.html';
         return;
     }
@@ -205,12 +210,17 @@ async function createTicket() {
     const location = document.getElementById('ticket-location').value;
     const description = document.getElementById('ticket-description').value;
 
+    console.log('📦 Данные формы:', { title, category, location, description });
+
     if (!title || !category || !location || !description) {
+        console.log('⚠️ Не все поля заполнены');
         showError('Все поля обязательны для заполнения');
         return;
     }
 
     try {
+        console.log('📡 Отправка запроса на:', `${API_URL}/tickets`);
+        
         const response = await fetch(`${API_URL}/tickets`, {
             method: 'POST',
             headers: {
@@ -220,13 +230,18 @@ async function createTicket() {
             body: JSON.stringify({ title, category, location, description })
         });
 
+        console.log('📨 Статус ответа:', response.status);
+
         if (response.ok) {
+            console.log('✅ Заявка создана, редирект на dashboard');
             window.location.href = 'dashboard.html';
         } else {
             const data = await response.json();
+            console.log('❌ Ошибка от сервера:', data);
             showError(data.error || 'Ошибка создания заявки');
         }
     } catch (error) {
+        console.log('💥 Критическая ошибка:', error);
         showError('Ошибка соединения с сервером');
     }
 }
