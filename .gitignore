@@ -36,14 +36,21 @@ backend/uploads/*
 ehthumbs.db
 Thumbs.db
 
-# Проектные папки (игнорируем всё, что не в backend/ и frontend/)
+# Database files - НЕ КОММИТИТЬ!
+*.db
+*.sqlite
+*.sqlite3
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+
+# Разрешаем ТОЛЬКО нужные папки в корне
 /*
 !/backend/
 !/frontend/
 !/README.md
 !/.gitignore
 
-# Игнорируем всё вне текущего репозитория
-/*/*/
-../
-../../
+# Разрешаем всё содержимое backend и frontend (кроме БД)
+!/backend/**
+!/frontend/**
