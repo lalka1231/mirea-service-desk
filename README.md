@@ -1,41 +1,52 @@
 # MIREA Service Desk
 
-Сервис для регистрации и обработки заявок на обслуживание инфраструктуры.
+## Описание
+MIREA Service Desk - веб-приложение для регистрации и обработки заявок на обслуживание инфраструктуры. Проект включает backend API и frontend-интерфейс для пользователей с разными ролями.
 
-## Стек
-- Backend: Go + Gin + JWT
-- Frontend: HTML/CSS/JavaScript
-- DB: SQLite
-- DevOps: Docker, Docker Compose, GitHub Actions
+## Цель проекта
+Цель проекта - реализовать сервис, в котором пользователь может создать заявку, а исполнитель может просматривать заявки и менять их статус.
 
-## Локальный запуск без Docker
-```bash
-cd backend
-cp .env.example .env
-go mod download
-go run ./cmd/server
-```
+## Возможности
+- Регистрация и вход пользователя.
+- Авторизация через JWT.
+- Разделение ролей пользователя и исполнителя.
+- Создание заявок с названием, категорией, локацией и описанием.
+- Просмотр списка заявок.
+- Получение заявки по идентификатору.
+- Изменение статуса заявки исполнителем.
+- Хранение данных в SQLite.
 
-Открой `frontend/index.html` в браузере или раздай папку `frontend` любым статическим сервером.
+## Используемые технологии
+- Go.
+- Gin.
+- JWT.
+- bcrypt.
+- SQLite.
+- HTML.
+- CSS.
+- JavaScript.
+- Dockerfile для backend и frontend.
 
-## Запуск через Docker Compose
-```bash
-docker compose up --build
-```
+## Структура проекта
+- `backend/cmd/server/main.go` - точка входа backend-приложения.
+- `backend/internal/handlers/` - обработчики авторизации и заявок.
+- `backend/internal/middleware/` - middleware для проверки JWT.
+- `backend/internal/models/` - модели пользователей и заявок.
+- `backend/internal/repository/` - работа с SQLite.
+- `backend/pkg/utils/` - вспомогательные функции для JWT.
+- `backend/.env.example` - пример переменных окружения.
+- `frontend/` - HTML-страницы, стили и JavaScript для интерфейса.
+- `backend/Dockerfile` и `frontend/Dockerfile` - файлы для контейнеризации частей проекта.
 
-После запуска:
-- backend: `http://localhost:8080`
-- frontend: `http://localhost`
+## Как запустить
+Перед запуском необходимо проверить зависимости и конфигурацию проекта.
 
-## Переменные окружения
-Пример находится в `backend/.env.example`:
-- `PORT` — порт backend
-- `DB_PATH` — путь к SQLite базе
-- `JWT_SECRET` — секрет для JWT
+В репозитории есть пример переменных окружения `backend/.env.example`, но в текущей структуре отсутствуют `go.mod` и `go.sum`, поэтому команды установки зависимостей и запуска backend требуют ручной проверки.
 
-## CI/CD
-Workflow находится в `.github/workflows/ci-cd.yml` и выполняет:
-- проверку форматирования Go-кода;
-- сборку backend;
-- запуск тестов;
-- сборку Docker-образов backend и frontend.
+Frontend можно открыть через HTML-файлы из папки `frontend` после запуска backend API.
+
+## Результат
+В результате получился прототип service desk-системы с backend API, авторизацией, хранением заявок в SQLite и frontend-интерфейсом для работы с заявками.
+
+## Выводы
+Проект показывает навыки разработки backend API на Go, работы с Gin, JWT-авторизацией, SQLite, разделением слоёв приложения и созданием простого веб-интерфейса на HTML/CSS/JavaScript.

@@ -1,56 +1,10 @@
-# Binaries
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-*.test
-*.out
-
-# Go workspace files
-go.sum
-go.mod
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# Environment
-.env
-.env.local
-.env.production
-
-# Uploads
-backend/uploads/*
-!backend/uploads/.gitkeep
-
-# OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-
-# Database files - НЕ КОММИТИТЬ!
-*.db
-*.sqlite
-*.sqlite3
-backend/*.db
-backend/*.sqlite
-backend/*.sqlite3
-
-# Разрешаем ТОЛЬКО нужные папки в корне
-/*
-!/backend/
-!/frontend/
-!/README.md
-!/.gitignore
-
-# Разрешаем всё содержимое backend и frontend (кроме БД)
-!/backend/**
-!/frontend/**
+__pycache__/
+*.pyc
+*.tmp
+*.log
+~$*
+.vscode/
+.idea/
+.env
